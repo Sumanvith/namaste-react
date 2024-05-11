@@ -8,7 +8,7 @@ const parent = React.createElement(
     ),
     React.createElement(
         "div",
-        {id:"child2"},
+        {id:"child"},
         [React.createElement("h1",{},"I'm an h1 tag"),React.createElement("h2",{},"I'm an h2 tag")]
     )]
 );
