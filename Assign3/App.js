@@ -3,15 +3,12 @@ import ReactDOM from "react-dom/client";
 import logo from "./logo.jpg";
 import usericon from "./usericon.jpg";
 
-
 const HeadingCompenent = React.createElement("div", { className: "title" }, [
   React.createElement("h1", {}, "Heading1"),
   React.createElement("h2", {}, "Heading2"),
   React.createElement("h3", {}, "Heading3"),
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-
 
 const heading1 = <h1>heading1</h1>;
 const heading2 = <h2>heading2</h2>;
@@ -26,12 +23,12 @@ const Element = (
 );
 
 const ContainerJSX = () => (
-      <div className="title">
-        {heading1}
-        {heading2}
-        {heading3}
-      </div>
-  );
+  <div className="title">
+    {heading1}
+    {heading2}
+    {heading3}
+  </div>
+);
 
 const Header = () => {
   return (
@@ -42,4 +39,4 @@ const Header = () => {
     </header>
   );
 };
-root.render(<Header/>);
+root.render(<Header />);
