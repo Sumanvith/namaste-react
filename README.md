@@ -18,3 +18,22 @@
 - Error Handling
 - HTTPs
 - Tree Shaking - remove unused code
+
+Namaste Food
+
+/*
+Header
+  Logo
+  Nav Items
+Body
+  Search
+  RestaurantContainer
+    RestaurantCard
+      Img
+      Name of Res, Star Rating, cuisine, etc
+Footer
+  Copyright
+  Links
+  Address
+  Contact
+*/
