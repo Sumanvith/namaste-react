@@ -53,3 +53,6 @@
   cursor: pointer;
   margin: 10px;
 }
+.filter {
+  display: flex;
+}
