@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
   const [searchText, setsearchText] = useState("");
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -54,10 +55,11 @@ const Body = () => {
           <button
             className="px-4 py-2 bg-gray-100 rounded-lg"
             onClick={() => {
-              filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4.5
               );
-              setlistOfRestaurants(filteredList);
+              console.log(filteredList);
+              setfilteredRestaurants(filteredList);
             }}>
             Top Rated Restaurants
           </button>
@@ -66,7 +68,12 @@ const Body = () => {
       <div className="flex flex-wrap">
         {filteredRestaurants.map((resData, index) => (
           <Link key={resData.info.id} to={"/restaurants/" + resData.info.id}>
-            <RestaurantCard resData={resData} />
+            {resData.info.avgRating > 4.5 ? (
+              <RestaurantCardPromoted
+                resData={resData}></RestaurantCardPromoted>
+            ) : (
+              <RestaurantCard resData={resData} />
+            )}
           </Link>
         ))}
       </div>
