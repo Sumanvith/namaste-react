@@ -26,6 +26,7 @@ const RestaurantMenu = () => {
     );
   const toggleShowIndex = (index) => {
     setShowIndex(showIndex === index ? null : index);
+    console.log(showIndex);
   };
   return (
     <div className="text-center">
